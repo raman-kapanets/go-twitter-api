@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:11-alpine
+    restart: always
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_MULTIPLE_DATABASES="twitter_test"
+      - POSTGRES_USER=twitter
+      - POSTGRES_PASSWORD=twitter
+      - POSTGRES_DB=twitter

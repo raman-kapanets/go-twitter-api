@@ -1,0 +1,4 @@
+bind_addr = ":8080"
+log_level = "debug"
+database_url = "postgres://twitter:twitter@localhost/twitter?sslmode=disable"
+app_key = "twitter_test_app"
