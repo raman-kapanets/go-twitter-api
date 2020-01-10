@@ -6,8 +6,8 @@ import (
 )
 
 type Store struct {
-	userRepository *UserRepository
-	tweetRepository *TweetRepository
+	userRepository      *UserRepository
+	tweetRepository     *TweetRepository
 	subscribeRepository *SubscribeRepository
 }
 

@@ -21,7 +21,7 @@ const (
 var (
 	errIncorrectEmailOrPassword = errors.New("incorrect email or password")
 	errIncorrectUsername        = errors.New("incorrect nickname")
-	errSubscribeToSelf        = errors.New("you can't subscribe to yourself")
+	errSubscribeToSelf          = errors.New("you can't subscribe to yourself")
 )
 
 type ctxKey int8

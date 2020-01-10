@@ -3,7 +3,7 @@ package teststore
 import "github.com/roman-kapanets/go-twitter-api/internal/app/model"
 
 type TweetRepository struct {
-	store *Store
+	store  *Store
 	tweets map[int]*model.Tweet
 }
 

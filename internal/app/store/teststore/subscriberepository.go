@@ -3,11 +3,11 @@ package teststore
 import "github.com/roman-kapanets/go-twitter-api/internal/app/model"
 
 type SubscribeRepository struct {
-	store *Store
+	store      *Store
 	subscribes map[int]*model.Subscribe
 }
 
-func (sr *SubscribeRepository) Create(s *model.Subscribe) error  {
+func (sr *SubscribeRepository) Create(s *model.Subscribe) error {
 	if err := s.Validate(); err != nil {
 		return err
 	}

@@ -11,59 +11,6 @@ import (
 	"testing"
 )
 
-//func TestServer_authMiddleware(t *testing.T) {
-//	secretKey := "secret"
-//	store := teststore.New()
-//	u := model.TestUser(t)
-//	store.User().Create(u)
-//
-//	expirationTime := time.Now().Add(5 * time.Minute)
-//	claims := &Claims{
-//		ID: u.ID,
-//		StandardClaims: jwt.StandardClaims{
-//			ExpiresAt: expirationTime.Unix(),
-//		},
-//	}
-//
-//	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-//	tokenString, err := token.SignedString(secretKey)
-//	assert.NoError(t, err)
-//
-//	testCases := []struct {
-//		name         string
-//		token  string
-//		expectedCode int
-//	}{
-//		{
-//			name: "authenticated",
-//			token: tokenString,
-//			expectedCode: http.StatusOK,
-//		},
-//		{
-//			name:         "not authenticated",
-//			token:  "some_invalid_token",
-//			expectedCode: http.StatusUnauthorized,
-//		},
-//	}
-//
-//	s := newServer(store, secretKey)
-//
-//	mw := s.authMiddleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-//		w.WriteHeader(http.StatusOK)
-//	}))
-//
-//	for _, tc := range testCases {
-//		t.Run(tc.name, func(t *testing.T) {
-//			rec := httptest.NewRecorder()
-//			req, _ := http.NewRequest(http.MethodGet, "/", nil)
-//			//cookieStr, _ := sc.Encode(sessionName, tc.cookieValue)
-//			req.Header.Set("Cookie", fmt.Sprintf("%s=%s", "token", tc.token))
-//			mw.ServeHTTP(rec, req)
-//			assert.Equal(t, tc.expectedCode, rec.Code)
-//		})
-//	}
-//}
-
 func TestServer_HandleUsersRegister(t *testing.T) {
 	s := newServer(teststore.New(), "secret_key")
 	testCases := []struct {

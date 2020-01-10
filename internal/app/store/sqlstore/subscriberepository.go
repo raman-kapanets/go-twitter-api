@@ -6,7 +6,7 @@ type SubscribeRepository struct {
 	store *Store
 }
 
-func (sr *SubscribeRepository) Create(s *model.Subscribe) error  {
+func (sr *SubscribeRepository) Create(s *model.Subscribe) error {
 	if err := s.Validate(); err != nil {
 		return err
 	}
